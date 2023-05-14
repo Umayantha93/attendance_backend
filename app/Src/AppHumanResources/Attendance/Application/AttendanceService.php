@@ -1,9 +1,6 @@
 <?php
+namespace App\Src\AppHumanResources\Attendance\Application;
 
-namespace App\src\AppHumanResources\Attendance\Application;
-
-// use App\Http\Controllers\Controller;
-// use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Src\AppHumanResources\Attendance\Domain\Attendance;
 use Excel;
@@ -12,6 +9,7 @@ class AttendanceService
 {
     public static function postAttendance($request)
     {
+        // dd($request);
         $file = file($request->file->getRealPath());
         $data = array_slice($file, 1);
 
@@ -58,3 +56,5 @@ class AttendanceService
         return $attendance;
     }
 }
+
+?>

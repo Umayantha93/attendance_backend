@@ -10,6 +10,7 @@ class AttendanceController extends Controller
     //
     public function postFile(Request $request)
     {
+        // dd($request);
         $request->validate([
             'file' => 'required|mimes:csv,txt'
         ]);
