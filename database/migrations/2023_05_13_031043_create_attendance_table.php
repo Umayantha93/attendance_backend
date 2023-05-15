@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('attendance', function (Blueprint $table) {
             $table->id();
-            $table->time('check_in', $precision = 0)->nullable();
-            $table->time('check_out', $precision = 0)->nullable();
+            $table->dateTime('check_in')->nullable();
+            $table->dateTime('check_out')->nullable();
             $table->unsignedBigInteger('emp_id')->nullable();
             $table->unsignedBigInteger('schedule_id')->nullable();
             $table->timestamps();

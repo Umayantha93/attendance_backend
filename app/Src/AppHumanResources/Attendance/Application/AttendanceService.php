@@ -12,7 +12,7 @@ class AttendanceService
         // dd($request);
         $file = file($request->file->getRealPath());
         $data = array_slice($file, 1);
-
+        // dd($data);
         $parts = (array_chunk($data, 5000));
 
         foreach($parts as $index=>$part){
@@ -24,7 +24,7 @@ class AttendanceService
         session()->flash('status', 'queued for importing');
 
         $path = resource_path('pending-files/*.csv');
-
+        // dd($path);
         $g = glob($path);
 
         foreach (array_slice($g, 0, 1) as $file){
